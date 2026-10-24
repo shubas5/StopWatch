@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #243b55;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+
+        .timer {
+            background: #f1f5f9;
+            padding: 25px 10px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        #display {
+            font-size: 42px;
+            font-weight: bold;
+            color: #141e30;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        #startBtn {
+            background: #16a34a;
+        }
+
+        #pauseBtn {
+            background: #f59e0b;
+        }
+
+        #resetBtn {
+            background: #ef4444;
+        }
+
+        #lapBtn {
+            background: #2563eb;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #243b55;
+            margin-bottom: 15px;
+        }
+
+        #lapList {
+            list-style: none;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+
+        #lapList li {
+            display: flex;
+            justify-content: space-between;
+            background: #f1f5f9;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            color: #243b55;
+            font-size: 15px;
+        }
+
+        .lap-count {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>⏱ Stopwatch</h1>
+
+        <div class="timer">
+            <div id="display">00:00:00.00</div>
+        </div>
+
+        <div class="buttons">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+            <button id="lapBtn">Lap</button>
+        </div>
+        <h2>Lap History</h2>
+        <p class="lap-count" id="lapCount">Laps: 0 / 5</p>
+        <ul id="lapList"></ul>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+</html>
